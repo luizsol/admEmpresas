@@ -1,6 +1,61 @@
 ---
-title: "Aula 5 - ?"
+title: "Aula 5 - Amortização"
 output: pdf_document
 ---
 
+Amortização é a redução do saldo devedor.
 
+## Notação
+
+* $S_t$ = Saldo devedor na data $t$
+* $P_t$ = Prestação paga na data $t$
+* $J_t$ = Juros pago na data $t$
+* $A_t$ = Amortização na data $t$
+
+$$P_t = J_t + A_t$$
+
+$$S_t = S_{t-1} - A_t$$
+$$J_t = S_{t-1} \cdot i$$
+
+### Exemplo
+
+Um empréstimo de R\$ 10000.00 será pago em 4 prestações mensais com taxa de juros de 1% a.m, sendo as parcelas:
+
+* $1^a$ prestação: R\$ 2000.00
+* $2^a$ prestação: R\$ 2500.00
+* $3^a$ prestação: R\$ 3500.00
+* $4^a$ prestação: Quitado o saldo devedor
+
+#### Tabela de amortização
+
+| Data | Saldo devedor | Juros | Amortização | Prestação |
+|------|---------------|-------|-------------|-----------|
+| 0    | 10000         |       |             |           |
+| 1    | 8100          | 100   | 1900        | 2000      |
+| 2    | 5681          | 81    | 2419        | 2500      |
+| 3    | 2237.81       | 56.81 | 3443.19     | 3000      |
+| 4    | 0             | 22.38 | 2237.81     | 2260.19   |
+
+Calculando o valor presente desse fluxo de caixa, temos:
+
+```{r}
+r = 1.01
+vp <- 2000 / r + 2500 / (r ** 2) + 3500 / (r ** 3) + 2260.19 / (r ** 4)
+vp
+```
+
+Podemos ver empiricamente que o valor presente desse fluxo de caixa é igual ao da dívida, como deveria ser.
+
+## Sistemas de Amortização
+
+### **S**istema de **A**mortização **C**onstante (SAC)
+
+Nesse sistema a amortização, constante, é calculada por:
+
+$$A = \dfrac{S_0}{n}$$, onde $n$ é o número de prestações.
+
+#### Exemplo
+
+Vamos refazer o exemplo anterior usando agora o **SAC** para calcular as prestações.
+
+***Tive que sair da aula :(***
