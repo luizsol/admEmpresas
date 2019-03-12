@@ -1,0 +1,90 @@
+---
+title: "Aula ? - Índice de Preço e taxa de inflação"
+output: pdf_document
+---
+
+## Índice de preço
+
+Considere uma "cesta" de produtos/serviços cujo preço é monitorado a cada período (mês). Chamemos esta série de $P_{t}$, onde
+
+* $P_{t}$ = preço da "cesta" na data $t$.
+* $P_{t} = P_{0};P_{1};P_{3};\ldots;P_{n}$
+
+Chamemos de $P_{0, t}$ de índice de preço no período $[0; t]$ à razão abaixo:
+
+$$p_{0,t} = \dfrac{P_{t}}{P_{0}}$$
+
+**Exemplo**:
+
+* $P_{t} = P_{0} = 100;P_{1} = 110;P_{3} = 130;P_{4} = 145$
+
+$$p_{0,3} = \dfrac{145}{100} = 1.45$$
+$$p_{1,3} = \dfrac{145}{110} = 1.32$$
+
+## Variação relativa do Preço
+
+$$\Delta P_{0,t} = \dfrac{P_{t} - P_{0}}{P_{0}} = \dfrac{P_{t}}{P_{0}} - 1 = j_{0, t}$$
+
+Onde $j_{0, t}$ é a **Inflação no peíodo $[0, t]$**.
+
+$$j_{0, t} = p_{0, t} - 1 \Rightarrow p_{0, t} = 1 + j_{0, t}$$
+
+*Obs*:
+
+$j_{0, 1} = j_{1}$ = inflação do mês 1
+
+$1 + j_{0, t} = p_{0, t} = \dfrac{P_{t}}{P_{0}}$
+
+$1 + j_{0, t} = \dfrac{P_{t}}{P_{t-1}} \cdot \dfrac{P_{t-1}}{P_{t-2}}\ldots\dfrac{P_{1}}{P_{0}} \Rightarrow (1 + j_{0, t}) = (1 + j_{1}) \cdot (1 + j_{2}) \ldots (1 + j_{t})$
+
+**Exemplo**:
+
+$j_{1} = 3\%, j_{2} = 5\%, j_{3} = 2\%$
+
+$(1+j_{tr}) = (1+1.03)(1+1.05)(1+1.02) = `r 1.03 * 1.05 * 1.02`$
+
+**Exemplo**:
+
+$(1+r_{ac}) = (1.01)^{30}(0.99)^{30} = `r (1.01 ^ 30) * (0.99 ^ 30)`$
+
+## Taxa real de juros
+
+Considere um capital $C_0$ aplicado a taxa de juros $i$ por um período, resultando num montante $M_A$.
+
+Considere também que neste mesmo período ocorreu uma inflação $j$.
+
+Ou seja, $M_B$ será o valor na data $1% que possui o mesmo poder aquisitivo de $C_0$ na data $0$.
+
+$$\dfrac{M_{B}}{C_0} = 1 + j \Rightarrow M_B = C_0 (1 + j)$$
+
+Ao mesmo tempo:
+
+$$M_A = C_0 (1 + i)$$
+
+Desta forma, o "ganho real" relativo (ou percentual) será:
+
+$$\dfrac{\Delta M}{M_B} = r$$
+
+$$r = \dfrac{M_A - M_B}{M_B} = \dfrac{M_A}{M_B} - 1 \therefore $$
+
+$$1 + r = \dfrac{C_0(1+i)}{C_0(1+j)} = \dfrac{1 + 1}{1 + j}$$
+
+**Exemplo**:
+
+$i = 10\%; j = 7\%$
+
+$1 + r = \dfrac{1.1}{1.07} = `r 1.1 / 1.07` \Rightarrow r = `r  1.1 / 1.07 - 1`$
+
+**Exemplo**:
+
+$i = 10\%; j = 15\%$
+
+$1 + r = \dfrac{1.1}{1.15} = `r 1.1 / 1.15` \Rightarrow r = `r  1.1 / 1.15 - 1`$
+
+**Exercício**:
+
+Considere um empréstimo feito em setembro/2016 de R\$ 500,000.00 que severá ser quitado neste mês com uma taxa real de juros de 0.5\% a.m. e correção monetária pelo IGPM. Determine o valor a ser pago.
+
+O IGPM acumulado entre 09/2016 e 02/2019 foi de $1 + j = 2.0900982$, logo:
+
+$M = R\$\ 500000.00 \cdot 1.005^{149} \cdot 2.0900982 = R\$\ `r format(500000 * 1.005^149 * 2.0900982, digits=9, nsmall=2)`$
