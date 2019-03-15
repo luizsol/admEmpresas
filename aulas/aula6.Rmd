@@ -1,0 +1,122 @@
+---
+title: "Aula 6 - Exercícios sobre amortização"
+output: pdf_document
+---
+
+## 1. Determinar o valor dos juros simples de uma aplicação financeira de R\$ 65.000,00 sabendo que a taxa de remuneração é de 3% ao mês e que o prazo da aplicação é de 100 dias.
+
+Taxa de juros total = $1 + 0.03 \cdot (100/30) = `r 1 + 0.03 * (100/30)`$
+
+Juros simples = $65000 \cdot (1.1 - 1) = `r 65000 * (1 + 0.03 * (100/30) - 1)`$
+
+## 2. Certa loja tem como política de vendas a crédito exigir 30% do valor à vista de uma mercadoria como entrada e o restante a ser liquidado em um único pagamento no final de 3 meses. Neste caso, o preço da mercadoria sofre um acréscimo de 10% a título de "despesas administrativas", cobrado na parcela única. Determine a taxa anual de juros compostos cobrada por esta loja.
+
+Entrada = 30% 
+
+Restante: 3 meses depois acrescido de 10%
+
+Taxa de juros anualizada = ?
+
+$0.7 \cdot (1 + r)^{3} + 0.3= 1.1 \Rightarrow r = 0.0455$
+
+Logo, a taxa de juros anualizada é
+
+$1.0323^{12} - 1 = 0.7060$
+
+70,6 % a.a.
+
+## 3. Uma determinada loja está realizando uma promoção com venda a prazo em quatro parcelas sem entrada e sem juros. Porém, se o cliente optar por pagar à vista, receberá um desconto de 14%. Qual a taxa de juros mensal cobrada pela loja?
+
+$1 - 0.14 = 0.25 * (1 + r)^{1} + 0.25 * (1 + r)^{2} + 0.25 * (1 + r)^{3} + 0.25 * (1 + r)^{4}$
+
+$3.4400 = \sum_{i = 1}^{4} (1 + r)^{i}$
+
+$r = 0.063183$
+
+6,32% a.m.
+
+## 4. Uma empresa deve investir R$ 180.000,00 num projeto de ampliação da capacidade produtiva, para obter benefícios das entradas de caixa de R$ 40.000,00 por ano, durante os próximos seis anos. Se a taxa de atratividade da firma for de 6% ao ano, qual o valor presente líquido do projeto?
+
+6 anos de fluxo de caixa anual de R\ $ 40.000,00 a uma taxa de 6% a.a.
+
+$NPV = \sum^{6}_{i = 1} \dfrac{40000}{1.06^i}$
+
+$NPV = 196 692.98$
+
+Vale a pena investir no projeto
+
+## 5 Um terreno é vendido em quarto prestações mensais e iguais de R\$ 150.000,00 cada uma, sendo a primeira dada como entrada. Se a taxa do financiamento for 4% ao mês, qual o preço à vista do terreno?
+
+Taxa: 4% a.m.
+
+4 parcelad de 150 000, sendo a primeira uma entrada
+
+Qual o NPV do imóvel?
+
+$NPV = 566263.66$
+
+## 6. Um empréstimo de R\$ 50.000,00 deverá ser pago em 10 prestações mensais iguais. Além das prestações mensais, serão pagas duas parcelas adicionais de R\$ 5.000,00 e R\$ 7.500,00 no terceiro e sexto meses, respectivamente. Qual o valor da prestação mensal, sabendo que a taxa de juros cobrada é de 20% ao ano?
+
+50 000
+
+10 prestações iguais em 10 meses
+
+parcela adicional de 5 000 no terceiro mes
+
+parcela adicional de 7 500 no sexto mes
+
+juros de 20% a.a.
+
+Qual o valor da parcela:
+
+Tirando o valor das parcelas adicionais do valor presente do empréstimo:
+
+$NPV =50 000 - 5 000 / (1.2)^{3/12} -  7 500 / (1.2)^{6/12} = 38376.25$
+
+Calculando o valor das prestações para esse $NPV$ usando a tabela PRICE, temos que a prestação será $4168.12$
+
+## 7. Um indivíduo aplicou R\$ 20.000,00 por dois meses. No mesmo período a taxa de inflação foi de 1.8%. Qual o valor de resgate de modo que a taxa real no período seja nula?
+
+Para a taxa real de juros ser nula é necessário que a taxa de juros nominal seja igual à inflação, logo:
+
+$r = 0.018 \Rightarrow M = 20000 \cdot 1.018 = 20 360$
+
+## 8. João completou hoje 30 anos. Sabendo-se que, ao se aposentar com 65 anos, ele gostaria de dispor de um montante de R\$ 500.000,00, calcule quanto João deveria poupar mensalmente em uma caderneta de poupança que rende 0.8% ao mês. Suponha que a poupança mensal inicie dentro de um mês.
+
+$$500 000 = P\cdot 1.008^{419} + P\cdot 1.008^{418} + \dots + P\cdot 1.008^{1} + P = P \cdot \displaystyle\sum_{n=0}^{419} 1.008^n = 3425.9 \therefore$$
+
+$$P = 145.95$$
+
+## 9. Um projeto de investimento tem os fluxos de caixa estimados abaixo:
+
+| Ano | Fluxo de caixa (em reais)|
+|-----|--------------------------|
+|0    | -50.000,00               |
+|1    | 28.000,00                |
+|2    | $x$                      |
+
+**O valor de $x$ de modo que o valor presente líquido do projeto seja R\$ 12.000,00 a uma taxa de 10% ao ano é:**
+
+$$12 000 = -50 000 + \dfrac{28 000}{1.1} + \dfrac{x}{1.1^2} \Rightarrow x =  44220$$
+
+## 10. Um automóvel, cujo preço à vista é R\$ 25.000,00 pode ser pago através de uma única parcela de R\$ 29.709,15, com vencimento em 1 ano. Se a inflação média mensal prevista para esse período é de 0.8%, a taxa real de juros cobrada no financiamento é de:
+
+$$25 000 = 29 709.15 \cdot \dfrac{1.008^{12}}{(1+r)^{12}} \Rightarrow r = 0.022601$$
+Taxa de juros real = $\dfrac{1 + r}{1 + i} -1 = 0.0145 \Rightarrow 1.45\% \ a.m.$
+
+## 11. Uma casa foi colocada à venda para pagamento em três anos, sendo R\$ 75.000,00 de entrada, 6 meses de carência, 10 prestações mensais sucessivas de R\$ 5.000,00 cada mais 8 seguintes de R\$ 10.000,00, além de 12 parcelas mensais e iguais a R\$ 15.000,00. Considerando o custo do dinheiro em 15% ao ano, no regime de juros compostos, para os próximos 3 anos, o valor desta casa, para pagamento a vista, desprezando os centavos, é:
+
+
+
+
+
+## 15. Considere que você deseja capitalizar um fundo de aposentadoria complementar depositando um pagamento mensal fixo a partir do próximo mês e pelos próximos 30 anos, a fim de poder fazer retiradas mensais de R\$ 10.000,00 pelos 20 anos seguintes. Considerando que a taxa real de juros é 0.6% a.m., determine quanto deve ser depositado mensalmente.
+
+20 anos = 240 meses
+
+Utilizando a tabela Price para calcular o valor presente com 240 prestações, juros de 0.6% a.m. e valor da prestação de R$ 10.000 temos um valor presente de R\$ 1.270.084,32
+
+Agora, calculando o valor da parcela para ao fim de 360 meses (10 anos) ser possível acruar este valor com à mesma taxa de juros, temos, aproximadamente:
+
+R\$ 994.71
+
