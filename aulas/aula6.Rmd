@@ -107,8 +107,31 @@ Taxa de juros real = $\dfrac{1 + r}{1 + i} -1 = 0.0145 \Rightarrow 1.45\% \ a.m.
 ## 11. Uma casa foi colocada à venda para pagamento em três anos, sendo R\$ 75.000,00 de entrada, 6 meses de carência, 10 prestações mensais sucessivas de R\$ 5.000,00 cada mais 8 seguintes de R\$ 10.000,00, além de 12 parcelas mensais e iguais a R\$ 15.000,00. Considerando o custo do dinheiro em 15% ao ano, no regime de juros compostos, para os próximos 3 anos, o valor desta casa, para pagamento a vista, desprezando os centavos, é:
 
 
+Trazendo todos os pagamentos a valor presente:
+
+$$VP_e = 75 000$$
+$$VP_p = \displaystyle{\sum_{i=6}^{15}\frac{5 000}{1.15^{i / 12}}} + \displaystyle{\sum_{i=16}^{23}\frac{10 000}{1.15^{i / 12}}} + \displaystyle{\sum_{i=24}^{35}\frac{15 000}{1.15^{i / 12}}} = 235 802.25595 \therefore$$
+$$VP = R\$ \ 310802$$
+
+## 12. Um grande magazine oferece, em promoção, dividir o preço de todas as mercadorias em 12 parcelas mensais e iguais, "sem juros" e sem entrada. O menor desconto que um consumidor, com dinheiro aplicado à taxa de juros compostos de 20% ao ano, deve exigir para pagamento à vista é de:
+
+O valor a vista deve ser igual ao valor presente do fluxo de caixa, portanto:
+
+$$VP = \displaystyle{\sum_{i=1}^{12} \frac{1/12}{1.2^{i/12}}} = 0.90721$$
+Logo o desconto à vista deveria ser de pelo menos $100\% - 90.721\% = 9.2791\%$ para que valha a pena pagar à vista.
+
+## 13. Nas operações de desconto de duplicatas, um banco utiliza a taxa de desconto de 60% ao ano (considere ano comercial, com 360 dias), além de cobrar 0,5% sobre o valor nominal da duplicata, a título de "taxa administrativa". Para um prazo de 18 dias de antecipação, a taxa de juros simples efetiva paga pelo cliente é de:
+
+Taxa de desconto comercial por dia: $\dfrac{0.6}{360}$, logo
+
+$$R = N \cdot \left(1 - \dfrac{18 \cdot 0.6}{360}\right) - N \cdot 0.005 = 0.965\cdot N \therefore$$
+$$1 + r = \dfrac{1}{0.965} \Rightarrow r = 0.0363$$
 
 
+## 14. João investiu a quantia recebia de herança em 3 aplicações distintas: 25% do total recebido em um fundo de renda fixa; 45% do valor herdado em um fundo cambial e o restante em ações. No final de um ano, João resgatou o montante (valor aplicado mais juros) de \$ 200.000,00 resultante das 3 aplicações. Se os rendimentos anuais foram os seguintes, no regime de juros compostos: 3% ao bimestre no fundo de renda fixa; 20% ao ano no fundo cambial, enquanto que o fundo de ações experimentou uma valorização de 20% no $1^o$ semestre e uma desvalorização de 8% no $2^o$ semestre, João herdou a quantia de (desprezando os centavos):
+
+
+$$200 000 = H\cdot \left( 0.25 \cdot 1.03^{12 / 2} + 0.45 \cdot 1.2 + 0.3 \cdot 1.2 \cdot 0.92 \right) \Rightarrow H = 170982$$
 
 ## 15. Considere que você deseja capitalizar um fundo de aposentadoria complementar depositando um pagamento mensal fixo a partir do próximo mês e pelos próximos 30 anos, a fim de poder fazer retiradas mensais de R\$ 10.000,00 pelos 20 anos seguintes. Considerando que a taxa real de juros é 0.6% a.m., determine quanto deve ser depositado mensalmente.
 
